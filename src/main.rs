@@ -1,5 +1,5 @@
 use std::env; 
-
+use std::fs;
 
 fn main() {
     println!("Hello, world!");
@@ -13,5 +13,7 @@ fn main() {
     println!("In file {}", filename);
 
 
-    
+    let contents = fs::read_to_string(filename)
+        .expect("read uncorrectly");
+    println!("content:\n{}",contents );
 }
